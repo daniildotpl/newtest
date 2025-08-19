@@ -1,11 +1,6 @@
 import pandas as pd
-from ishch.connector import my_connection, str_to_float, add_cell_to_payload
+from ishch.connector import my_connection, add_cell_to_payload
 from docxtpl import DocxTemplate
-
-
-
-
-
 
 
 def get_payload(engine):

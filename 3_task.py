@@ -118,7 +118,7 @@ def make_powerp(context):
                         # print(f'run: {run.text}')
                         for tag in LIST_OF_TAGS:
                             if tag in run.text:
-                                print(f'find: {tag}')
+                                # print(f'find: {tag}')
                                 try:
                                     value = context[tag]
                                     # print(f'context value: {value}')        
@@ -156,38 +156,3 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
-        # SELECT 
-        #     year
-        #     , region
-        #     , SUM(CASE 
-        #         WHEN tip_mo = 'Детские поликлиники' AND name_value = 'Число организаций, ед'
-        #         THEN TRY_CAST(REPLACE(REPLACE(value, ' ', ''), ',', '.') AS DECIMAL(15,0))
-        #         ELSE 0 END) AS kids
-        #     , SUM(CASE
-        #         WHEN tip_mo = 'Поликлиники' AND name_value = 'Число организаций, ед'
-        #         THEN TRY_CAST(REPLACE(REPLACE(value, ' ', ''), ',', '.') AS DECIMAL(15,0))
-        #         ELSE 0 END) AS adults
-        #     , SUM(CASE 
-        #         WHEN name_value = 'Число организаций, ед'
-        #         THEN TRY_CAST(REPLACE(REPLACE(value, ' ', ''), ',', '.') AS DECIMAL(15,0)) 
-        #         ELSE 0 END) AS count_org
-        #     , SUM(CASE 
-        #         WHEN name_value = 'Число должностей врачей, ед занятых' 
-        #         THEN TRY_CAST(REPLACE(REPLACE(value, ' ', ''), ',', '.') AS DECIMAL(15,1)) 
-        #         ELSE 0 END) AS doctors
-        #     , SUM(CASE 
-        #         WHEN name_value = 'Число должностей среднего медперсонала, ед занятых' 
-        #         THEN TRY_CAST(REPLACE(REPLACE(value, ' ', ''), ',', '.') AS DECIMAL(15,1)) 
-        #         ELSE 0 END) AS nurses
-
-
-        
-        # FROM statinfo
-        # WHERE year IN (2021, 2022) 
-        # AND region = {reporting_region}
-        # GROUP BY year, region
-        # ;
